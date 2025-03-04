@@ -8,42 +8,43 @@ using namespace std;
 // GradeBook class definition
 class GradeBook
 {
-  public:
-  // Function that sets the course name
-  void setCourseName( string name ){
-    courseName = name; // store the course name in the object
-  } // end function setCourseName
+public:
+    // Function that sets the course name
+    void setCourseName(string name) {
+        courseName = name; // Store the course name in the object
+    } // end function setCourseName
 
-  //Function that gets the course name
-  string getCourseName () const
-  {
-    return courseName; // return the objects courseName
-  } // end function getCOurse 
+    // Function that gets the course name
+    string getCourseName() const {
+        return courseName; // Return the object's courseName
+    } // end function getCourseName
 
-  // function that display  a welcome message 
-  void displayMessage() const
-  {
-    //this statemenr calls getCourseName to get the name of the course this GradeBook represents
-    cout << "Welcome to the grade book for\n" << getCourseName() << "!" << endl;
-  } // end function displayMessage
-  private:
-  string courseName = "null"; // course name for this GradeBook
-}; // end class gradeBook
+    // Function that displays a welcome message
+    void displayMessage() const {
+        cout << "Welcome to the grade book for\n" << getCourseName() << "!" << endl;
+    } // end function displayMessage
 
-// Function main begins program executions 
+private:
+    string courseName; // Default course name is "null"
+}; // end class GradeBook
+
+// Function main begins program execution
 int main()
 {
-  string nameOfCourse; // string characters to store teh course name
-  GradeBook myGradeBook; // create a GradeBook object named myGradeBoook
+    string nameOfCourse; // String variable to store the course name
+    GradeBook myGradeBook; // Create a GradeBook object named myGradeBook
 
-  //Display the initial value of the courseName
-  cout << "initial course name is: " << myGradeBook.getCourseName() << endl;
+    // Display the initial value of the courseName
+    cout << "Initial course name is: " << myGradeBook.getCourseName() << endl;
 
-  //Prompt for, input and set course Name
-  cout << "\nPlease enter the course name: " << endl;
-  getline( cin, nameOfCourse ); // Read a course name with blanks
-  myGradeBook.setCourseName(nameOfCourse); // set the new courseName
+    // Prompt for input and set course name
+    cout << "\nPlease enter the course name: " << endl;
+    getline(cin, nameOfCourse); // Read a course name with spaces
 
-  cout << endl; // outputs a blank line 
-  myGradeBook.displayMessage(); // display message with new course name
+    myGradeBook.setCourseName(nameOfCourse); // Set the new courseName
+
+    cout << endl; // Output a blank line
+    myGradeBook.displayMessage(); // Display message with the new course name
+
+    return 0;
 } // end main
