@@ -49,5 +49,4 @@ int main()
 
   cout << "Your new balance is: ";
   myAccount1.displayAccountBalance();
-  
 };
