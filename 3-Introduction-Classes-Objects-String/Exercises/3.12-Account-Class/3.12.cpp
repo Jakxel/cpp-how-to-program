@@ -35,6 +35,11 @@ class Account
     cout << getAccountBalance() << "!" << endl;
   }
 
+  void addBalance() const 
+  {
+    
+  }
+
   private:
   int accountBalance;
 };
