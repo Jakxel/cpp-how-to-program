@@ -16,14 +16,20 @@ class Account
         }
   }
 
-  void setAccountBalance(int balance)
+  void Credit(int amount)
+   {
+      if (amount > 0)
+        accountBalance += amount;
+      else
+        cerr << "Invalid credit amount." << endl;
+    }
+
+  void debit(int amount) 
   {
-    if (balance > 0)            
-      accountBalance = balance;
-    else 
-    {
-      cerr << "Invalid balance value. Balance remains: " << accountBalance << endl;
-    }    
+    if (amount > accountBalance)
+      cerr << "Debit amount exceeded account balance." << endl;
+    else
+      accountBalance -= amount;
   }
 
   int getAccountBalance() const
@@ -35,9 +41,14 @@ class Account
     cout << getAccountBalance() << "!" << endl;
   }
 
-  void addBalance() const 
+  void credit (int credit)
   {
-    
+    if ( credit > accountBalance)
+      cerr << "Your credit is invalid" << endl;
+    else
+    {
+      accountBalance += credit;
+    }
   }
 
   private:
@@ -46,12 +57,20 @@ class Account
 
 int main()
 {
-  Account myAccount1(10);
+  Account account1(10);
+  Account account2(-2);
 
-  cout << "Your actual balance is: " << myAccount1.getAccountBalance() << "!" << endl;
+  cout << "Account 1 balance: " << account1.getAccountBalance() << endl;
+  cout << "Account 2 balance: " << account2.getAccountBalance() << endl;
 
-  myAccount1.setAccountBalance(0);
+  account1.credit(30);
+  cout << "Account 1 balance after credit: " << account1.getAccountBalance() << endl;
 
-  cout << "Your new balance is: ";
-  myAccount1.displayAccountBalance();
+  account1.debit(20);
+  cout << "Account 1 balance after valid debit: " << account1.getAccountBalance() << endl;
+
+  account1.debit(100);
+  cout << "Account 1 balance after invalid debit: " << account1.getAccountBalance() << endl;
+
+  return 0;
 };
