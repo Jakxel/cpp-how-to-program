@@ -1,28 +1,43 @@
-// (Credit limits)
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
     int numAccount = 0;
-    int balance = 0;
-    int charges = 0;
-    int credit = 0;
-    int creditLimit = 0;
+    double balance = 0.0;
+    double charges = 0.0;
+    double credit = 0.0;
+    double creditLimit = 0.0;
 
-    cout << "Enter account nnumber (or -1 to quit):" << endl;
+    cout << fixed << setprecision(2); // Formatear a 2 decimales
+
+    cout << "Enter account number (or -1 to quit): ";
     cin >> numAccount;
 
-    while ( numAccount != -1) {
-        cout << "Enter beginning balance: " << endl;
+    while (numAccount != -1) {
+        cout << "Enter beginning balance: ";
         cin >> balance;
-         cout << "Enter total charges: " << endl;
+        cout << "Enter total charges: ";
         cin >> charges;
-         cout << "Enter total credits: " << endl;
+        cout << "Enter total credits: ";
         cin >> credit;
-         cout << "Enter credit limit: " << endl;
+        cout << "Enter credit limit: ";
         cin >> creditLimit;
 
-         cout << "Enter account nnumber (or -1 to quit):" << endl;
-         cin >> numAccount;
+        double newBalance = balance + charges - credit;
+
+        cout << "New balance is: $" << newBalance << endl;
+
+        if (newBalance > creditLimit) {
+            cout << "Account:       " << numAccount << endl;
+            cout << "Credit limit:  $" << creditLimit << endl;
+            cout << "Balance:       $" << newBalance << endl;
+            cout << "Credit limit exceeded." << endl;
+        }
+
+        cout << "\nEnter account number (or -1 to quit): ";
+        cin >> numAccount;
     }
+
+    return 0;
 }
