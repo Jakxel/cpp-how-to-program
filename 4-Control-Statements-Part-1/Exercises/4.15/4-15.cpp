@@ -1,20 +1,20 @@
  #include <iostream>
+ #include <iomanip>
  using namespace std;
 
 int main() {
-
-    return 0;
-    double sales = 0;
-    double salary = 0;
+    double sales = 0.0;
+    double salary = 0.0;
     
-    cout << "Enter sales iin dollar ( -1 to end)";
+    cout << fixed << setprecision(2);
+    cout << "Enter sales in dollar ( -1 to end): ";
     cin >> sales;
 
     while (sales != -1) {
-        salary = (sales * 0.09) +200;
+        salary = (sales * 0.09) +200 ;
         cout << "Salary is: $" << salary << endl;
-        cout << "Enter sales iin dollar ( -1 to end)";
+        cout << "Enter sales in dollar ( -1 to end): ";
+        cin >> sales;
     }
-
     return 0;
 }
