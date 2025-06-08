@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/jakxel/Developer/Courses/Cpp-How-to-program/5-Control-Statements-Part-2/Exercises/508",
+      "program": "/Users/jakxel/Developer/Courses/Cpp-How-to-program/5-Control-Statements-Part-2/Exercises/508/build/Debug/outDebug"
+    }
+  ]
+}
