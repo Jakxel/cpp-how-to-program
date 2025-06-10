@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/jakxel/Developer/Courses/Cpp-How-to-program/6-Functions-&-Introduction-to-Recursion/Figures",
+      "program": "/Users/jakxel/Developer/Courses/Cpp-How-to-program/6-Functions-&-Introduction-to-Recursion/Figures/build/Debug/outDebug"
+    }
+  ]
+}
