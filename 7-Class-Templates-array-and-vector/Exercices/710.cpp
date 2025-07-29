@@ -12,7 +12,7 @@ int sales = 0;
 int main() {
   cout << "Enter sales [-1 to exit]: ";
   cin >> sales;
-
+  
   while ( sales != -1) {
     int comission = (200 + sales) * rateSalary;
     cout << "Your comission is: " << comission << endl;
